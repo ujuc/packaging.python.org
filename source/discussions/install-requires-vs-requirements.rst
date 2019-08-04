@@ -11,13 +11,11 @@ install_requires vs requirements files
 install_requires
 ----------------
 
-``install_requires`` is a :ref:`setuptools` :file:`setup.py` keyword that
-should be used to specify what a project **minimally** needs to run correctly.
-When the project is installed by :ref:`pip`, this is the specification that is
-used to install its dependencies.
+``install_requires``\는 :ref:`setuptools` :file:`setup.py` 가 키워드입니다.
+프로젝트가 작동하는데 필요한 **최소한**\의 패키지를 일컫습니다. 프로젝트가 :ref:`pip`\를 이용하여 
+설치할때, 의존성을 고려하여 설치하기 위해 사용되는 스펙입니다.
 
-For example, if the project requires A and B, your ``install_requires`` would be
-like so:
+예를 들어, 프로젝트가 A와 B가 필요하다면, ``install_requires``\는 다음과 같이 사용합니다:
 
 ::
 
@@ -26,10 +24,10 @@ like so:
     'B'
  ]
 
-Additionally, it's best practice to indicate any known lower or upper bounds.
+또한 버전에 대해서 상한과 하한을 나타내는 것을 권장합니다.
 
-For example, it may be known, that your project requires at least v1 of 'A', and
-v2 of 'B', so it would be like so:
+예를 들어, 이 프로젝트에서는 'A' 패키지는 v1 이상, 'B' 패키지는 v2 이상이 필요하다는 것을 다음과 같이
+나타냅니다:
 
 ::
 
@@ -38,8 +36,8 @@ v2 of 'B', so it would be like so:
     'B>=2'
  ]
 
-It may also be known that project A follows semantic versioning, and that v2 of
-'A' will indicate a break in compatibility, so it makes sense to not allow v2:
+프로젝트 'A'를 사용하는데 v2에서 호환성이 깨졌으면, 다음과 같이 의미론적 버저닝을 통해 v2를 사용하지
+않을 수 있습니다:
 
 ::
 
@@ -48,42 +46,36 @@ It may also be known that project A follows semantic versioning, and that v2 of
     'B>=2'
  ]
 
-It is not considered best practice to use ``install_requires`` to pin
-dependencies to specific versions, or to specify sub-dependencies
-(i.e. dependencies of your dependencies).  This is overly-restrictive, and
-prevents the user from gaining the benefit of dependency upgrades.
+``install_requires``\에서 종속성을 특정 버전에 고정하거나 하위 종속성(종속성의 종속성)을 
+지정하는 방법은 권장되지 않습니다. 이는 지나치게 제한적이며, 사용자가 종속성 업그레이드의 이점을 
+얻지 못하게 됩니다.
 
-Lastly, it's important to understand that ``install_requires`` is a listing of
-"Abstract" requirements, i.e just names and version restrictions that don't
-determine where the dependencies will be fulfilled from (i.e. from what
-index or source).  The where (i.e. how they are to be made "Concrete") is to
-be determined at install time using :ref:`pip` options. [1]_
+마지막으로, ``install_requires``\는 "추상(Abstract)적인" 요구 사항 리스트이며, 의존성이 
+어디에서 만족이 될지 (어떤 인덱스나 소스로부터) 결정되지 않는 이름과 버전에 대한 제한 사항임을 
+이해하는 것이 중요합니다. 어떻게 "고정적(Concrete)"으로 만들어야 하는지는 설치 시 
+:ref:`pip` 옵션을 이용하여 결정합니다. [1]_
 
 
 Requirements files
 ------------------
 
-:ref:`Requirements Files <pip:Requirements Files>` described most simply, are
-just a list of :ref:`pip:pip install` arguments placed into a file.
+:ref:`Requirements Files <pip:Requirements Files>`\은 단순합니다. 
+:ref:`pip:pip install`\에 대한 인수를 파일에 목록으로 남긴 것입니다.
 
-Whereas ``install_requires`` defines the dependencies for a single project,
-:ref:`Requirements Files <pip:Requirements Files>` are often used to define
-the requirements for a complete Python environment.
+``install_requires``\는 하나의 프로젝트에 대한 의존성을 정의하는 반면, 
+:ref:`Requirements Files <pip:Requirements Files>`\는 완전한 파이썬 환경을 위한
+요구사항을 정의하는 데 사용됩니다.
 
-Whereas ``install_requires`` requirements are minimal, requirements files
-often contain an exhaustive listing of pinned versions for the purpose of
-achieving :ref:`repeatable installations <pip:Repeatability>` of a complete
-environment.
+``install_requires``\의 요구사항이 최소지만, 완벽한 환경을 
+:ref:`repeatable installations <pip:Repeatability>`\에 아카이빙하여 자주 사용되는
+고정된 버전을 철저히 관리하는데 사용됩니다.
 
-Whereas ``install_requires`` requirements are "Abstract", i.e. not associated
-with any particular index, requirements files often contain pip
-options like ``--index-url`` or ``--find-links`` to make requirements
-"Concrete", i.e. associated with a particular index or directory of
-packages. [1]_
+``install_requires`` 요구 사항은 "추상적(Abstract)" 이기에 특정 인덱스와 관련이 없습니다.
+요구사항 파일에는 "--index-url", "--find-links"와 같은 pip 옵션이 포함되어 요구사항을 
+"고정(Concrete)" 하기에 패키지의 특정 인덱스나 디렉터리와 연관됩니다. [1]_
 
-Whereas ``install_requires`` metadata is automatically analyzed by pip during an
-install, requirements files are not, and only are used when a user specifically
-installs them using ``pip install -r``.
+``install_requires`` 메타데이터는 설치 중에 pip에 의해 자동으로 분석되는 반면,
+요구사항 파일은 사용자가 ``pip install -r`` 명령을 사용하여 설치할 때만 사용됩니다.
 
 ----
 
