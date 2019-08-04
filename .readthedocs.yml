@@ -1,0 +1,13 @@
+version: 2
+
+sphinx:
+  builder: html
+  fail_on_warning: true
+
+build:
+  image: latest
+
+python:
+  version: 3.7
+  install:
+    - requirements: requirements.txt
