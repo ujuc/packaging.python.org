@@ -1,20 +1,20 @@
 
 =============================
-Deploying Python applications
+파이썬 응용 프로그램 배포
 =============================
 
-:Page Status: Incomplete
+:Page Status: 불완전함 (Incomplete)
 :Last Reviewed: 2014-11-11
 
 .. contents:: Contents
    :local:
 
 
-Overview
+개요
 ========
 
 
-Supporting multiple hardware platforms
+여러 하드웨어 플랫폼 지원
 --------------------------------------
 
 ::
@@ -36,7 +36,7 @@ Supporting multiple hardware platforms
 
 
 
-OS packaging & installers
+OS 패키징과 설치 프로그램
 =========================
 
 ::
@@ -60,24 +60,20 @@ Windows
 Pynsist
 ^^^^^^^
 
-`Pynsist <https://pypi.org/project/pynsist>`__ is a tool that bundles Python
-programs together with the Python-interpreter into a single installer based on
-NSIS. In most cases, packaging only requires the user to choose a version of
-the Python-interpreter and declare the dependencies of the program. The tool
-downloads the specified Python-interpreter for Windows and packages it with all
-the dependencies in a single Windows-executable installer.
+`Pynsist <https://pypi.org/project/pynsist>`__\는 파이썬 프로그램을 파이썬 인터프리터와
+함께 번들로 묶어 NSIS 기반의 단일 설치 프로그램으로 만드는 툴입니다. 대부분의 경우, 패키징은 사용자가
+파이썬 인터프리터 버전을 선택하고 프로그램 종속성을 선언하도록 되어있습니다. 이 툴은 Windows 용
+특정 파이썬 인터프리터를 다운받고, 단일 Windows용 설치 프로그램에서 모든 종속성을 패키지화 합니다.
 
-The installer installs or updates the Python-interpreter on the users system,
-which can be used independently of the packaged program. The program itself,
-can be started from a shortcut, that the installer places in the start-menu.
-Uninstalling the program leaves the Python installation of the user intact.
+설치 프로그램은 패키지 시스템과 독립적으로 사용할 수 있는 파이썬 인터프리터를 사용자 시스템에 설치하거나
+업데이트 합니다. 프로그램 자체는 설치 프로그램이 시작 메뉴에 추가하여 바로가기에서 시작할 수 있습니다. 
+프로그램을 삭제할 경우, 사용자가 설치해둔 파이썬에 문제가 발생하지 않습니다.
 
-A big advantage of pynsist is that the Windows packages can be built on Linux.
-There are several examples for different kinds of programs (console, GUI) in
-the `documentation <https://pynsist.readthedocs.io>`__. The tool is released
-under the MIT-licence.
+pynsist의 가장 큰 장점은 Windows 패키지가 Linux에서 빌드 될 수 있다는 점입니다. 
+`documentation <https://pynsist.readthedocs.io>`__\에는 다른 종류 프로그램 (콘솔, GUI)에
+대한 몇 가지 예제가 있습니다. MIT 라이센스를 따릅니다.
 
-Application bundles
+응용 프로그램 번들
 ===================
 
 ::
@@ -88,7 +84,7 @@ Application bundles
   - wheels kinda/sorta
 
 
-Configuration management
+구성 관리
 ========================
 
 ::
