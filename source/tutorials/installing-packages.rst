@@ -1,21 +1,17 @@
 .. _installing-packages:
 
 ===================
-Installing Packages
+패키지 설치
 ===================
 
-This section covers the basics of how to install Python :term:`packages
-<Distribution Package>`.
+이 섹션에서는 파이썬 :term:`패키지 <Distribution Package>`\을 설치하는 방법에 대해 다룹니다.
 
-It's important to note that the term "package" in this context is being used as
-a synonym for a :term:`distribution <Distribution Package>` (i.e. a bundle of
-software to be installed), not to refer to the kind of :term:`package <Import
-Package>` that you import in your Python source code (i.e. a container of
-modules). It is common in the Python community to refer to a :term:`distribution
-<Distribution Package>` using the term "package".  Using the term "distribution"
-is often not preferred, because it can easily be confused with a Linux
-distribution, or another larger software distribution like Python itself.
-
+이 문맥에서 "패키지"라는 용어는 :term:`배포 <Distribution Package>` (즉, 설치할 소프트웨어 
+번들)의 동의어로 사용된다는 점을 유의해야합니다. 파이썬 코드 (즉, 모듈에서 컨테이너)에서 임포트하는
+일종의 :term:`패키지 <Import Package>`\를 참조하지 않습니다. 파이썬 커뮤니티에서는 "패키지"라는 
+용어를 사용하여 :term:`배포 <Distribution Package>`\를 나타냅니다. "배포"라는 용어를 사용하는 것은 
+선호되지 않습니다. 리눅스 배포판과 혼동 될 수 있기 때문입니다. 배포 또는 파이썬과 같은 다른 큰 소프트웨어 
+배포판을 포함할 수 있습니다.
 
 .. contents:: Contents
    :local:
@@ -23,28 +19,25 @@ distribution, or another larger software distribution like Python itself.
 
 .. _installing_requirements:
 
-Requirements for Installing Packages
+패키지 설치 요구 사항
 ====================================
 
-This section describes the steps to follow before installing other Python
-packages.
+이 섹션에서는 다른 파이썬 패키지를 설치하기 전에 따라야 할 단계를 설명합니다.
 
-
-Ensure you can run Python from the command line
+커멘드 라인에서 파이썬을 실행할 수 있는지 확인
 -----------------------------------------------
 
-Before you go any further, make sure you have Python and that the expected
-version is available from your command line. You can check this by running:
+더 진행하기 전에, 파이썬을 설치되어있고, 커멘드 라인에서 예상되는 버전을 사용할 수 있는지 확인합니다. 
+다음을 실행하여 이를 확인할 수 있습니다:
 
 .. code-block:: bash
 
     python --version
 
-You should get some output like ``Python 3.6.3``. If you do not have Python,
-please install the latest 3.x version from `python.org`_ or refer to the
-`Installing Python`_ section of the Hitchhiker's Guide to Python.
+``Python 3.6.3``\과 같은 결과가 출력되어야 합니다. 파이썬이 없다면, `python.org`_\에서 최신 
+3.x 버전을 설치하거나 Hitchhiker's Guide to Python에서 `파이썬 설치`_ 세션을 참조하십시오.
 
-.. Note:: If you're a newcomer and you get an error like this:
+.. Note:: 당신이 초보이고 다음과 같은 오류가 발생하면:
 
     .. code-block:: python
 
@@ -53,15 +46,12 @@ please install the latest 3.x version from `python.org`_ or refer to the
           File "<stdin>", line 1, in <module>
         NameError: name 'python' is not defined
 
-    It's because this command and other suggested commands in this tutorial
-    are intended to be run in a *shell* (also called a *terminal* or
-    *console*). See the Python for Beginners `getting started tutorial`_ for
-    an introduction to using your operating system's shell and interacting with
-    Python.
+    이 튜토리얼에서 이 명령과 다른 제안된 명령은 *shell* (*terminal* 또는 *console* 이라고도 함)
+    에서 실행하기 위한 것입니다. 운영체제 셸 사용과 파이썬과의 상호작용에 대한 소개는 초보자를 위한 파이썬 
+    시작하기 튜토리얼을 참조하십시오.
 
-.. Note:: If you're using an enhanced shell like IPython or the Jupyter
-   notebook, you can run system commands like those in this tutorial by
-   prefacing them with a ``!`` character:
+.. Note:: IPython이나 Jupyter 노트북과 같은 향상된 셸을 사용한다면, 이 튜토리얼에서와 같은 시스템 
+   명령어 ``!`` 문자를 사용합니다:
 
     ::
 
@@ -69,10 +59,9 @@ please install the latest 3.x version from `python.org`_ or refer to the
                 !{sys.executable} --version
         Python 3.6.3
 
-   It's recommended to write ``{sys.executable}`` rather than plain ``python`` in
-   order to ensure that commands are run in the Python installation matching
-   the currently running notebook (which may not be the same Python
-   installation that the ``python`` command refers to).
+   현재 실행중인 노트북에서 일치하는 파이썬 콘솔 명령어를 사용하려면 ``python``\이 아닌 
+   ``{sys.executable}``\를 사용하는 것이 좋습니다. (``python`` 명령을 실행하는 것이 
+   설치된 파이썬과 다를 수 있습니다.)
 
 .. Note:: Due to the way most Linux distributions are handling the Python 3
    migration, Linux users using the system Python without creating a virtual
@@ -101,7 +90,7 @@ using your OS package manager, you may have to install pip separately, see
 :doc:`/guides/installing-using-linux-tools`.
 
 .. _Homebrew: https://brew.sh
-.. _Installing Python: http://docs.python-guide.org/en/latest/starting/installation/
+.. _파이썬 설치: http://docs.python-guide.org/en/latest/starting/installation/
 
 If ``pip`` isn't already installed, then first try to bootstrap it from the
 standard library:
